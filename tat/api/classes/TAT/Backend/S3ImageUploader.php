@@ -6,8 +6,8 @@
 
     class S3ImageUploader {
         const FILE_SIZE_LIMIT         = 8388608;
-        const AWS_ACCESS_KEY          = 'AKIAIJHQEJK3QQU5MENA';
-        const AWS_SECRET_KEY          = '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';
+        const AWS_ACCESS_KEY          = '';
+        const AWS_SECRET_KEY          = '';
         const AWS_S3_BUCKET           = 'tat-addon';
         const UPLOADED_IMAGE_BASE_URL = 'https://d3vibt3h1fiags.cloudfront.net/uploaded/';
 
