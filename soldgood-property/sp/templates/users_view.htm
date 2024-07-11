@@ -1,0 +1,128 @@
+<html {$html_attrs}>
+<head><title>{$caption users}</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+{BEGIN style_block}
+<style>
+#height100{$id} {padding:10px;} 
+#center_block{$id} {width:55%;margin:0 auto;min-width: 500px;}
+#contents_block{$id} {text-align:center;}
+#header_block{$id} {white-space:nowrap;height:31px;padding:5px;text-align:center;}
+#fields_block{$id} {width:100%}
+#fields_block{$id} td.es{padding:4px 10px;}
+#buttons_block{$id} {padding:5px;white-space:nowrap;text-align:center;}
+#required_block{$id} {text-align:left;padding:5px}
+a.pdf{float:left;}
+</style>
+{END style_block}
+</head>
+<body {$bodyattrs}>
+{BEGIN body}
+{$header}
+<div id="height100{$id}" align="center">
+
+{BEGIN flybody}
+<table cellpadding=0 cellspacing=0 class="main_table2" border=0 align=center width=400><tr><td id="contents_block">
+<div id="header_block{$id}" class="upeditmenu">
+{$caption users}, {mlang_message VIEW_RECORD} [
+{$label users id}: {$show_key1}
+]
+</div>
+
+<table cellpadding="4" cellspacing="0" border="0" id="fields_block{$id}">
+{BEGIN id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label users id}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$id_value}&nbsp;
+		</td>
+	</tr>
+{END id_fieldblock}
+{BEGIN name_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label users name}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$name_value}&nbsp;
+		</td>
+	</tr>
+{END name_fieldblock}
+{BEGIN cn_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label users cn}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$cn_value}&nbsp;
+		</td>
+	</tr>
+{END cn_fieldblock}
+{BEGIN email_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label users email}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$email_value}&nbsp;
+		</td>
+	</tr>
+{END email_fieldblock}
+{BEGIN icon_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label users icon}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$icon_value}&nbsp;
+		</td>
+	</tr>
+{END icon_fieldblock}
+{BEGIN identity_id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label users identity_id}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$identity_id_value}&nbsp;
+		</td>
+	</tr>
+{END identity_id_fieldblock}
+{BEGIN creation_date_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label users creation_date}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$creation_date_value}&nbsp;
+		</td>
+	</tr>
+{END creation_date_fieldblock}
+</table>
+
+<div class="toplist" id="buttons_block{$id}">
+{BEGIN prev_button}
+ <span class=buttonborder><input class=button type=reset value=" <<< " {$prevbutton_attrs}></span>
+{END prev_button}
+{BEGIN back_button}
+ <span class=buttonborder><input class=button type=reset value="{mlang_message BACK_TO_LIST}" onclick="window.location.href='users_list.php?a=return'" {$backbutton_attrs}></span>
+{END back_button}
+{BEGIN next_button}
+ <span class=buttonborder><input class=button type=reset value=" >>> " {$nextbutton_attrs} ></span>
+{END next_button}
+</div>
+</td></tr></table>
+{END flybody}
+</div>
+
+{BEGIN detail_tables}
+{END detail_tables}
+<br><br>
+{$footer}
+{END body}
+</body>
+</html>

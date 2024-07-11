@@ -1,0 +1,41 @@
+<html {$html_attrs}>
+<head>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+<style>
+#center_block {width:35%;margin:0 auto;min-width:300px}
+#contents_block {text-align:center;}
+#header_block {padding:2px 5px 6px;text-align:center;line-height: 1.8}
+#tables_block {width:auto;margin:0;text-align:left;}
+#header_block > span {margin:2 5px}
+.captions {padding:6px 10px;text-align:left;}
+#header_block span {padding-right:10px}
+</style>
+</head>
+<body>
+{BEGIN body}
+{$header}
+<table align=center id="center_block" cellpadding=0 cellspacing=0><tr><td id="contents_block">
+<div class=upeditmenu id="header_block">
+{BEGIN loggedas_block}
+<span>{mlang_message LOGGED_AS}&nbsp;<b>{$username}</b></span>
+{END loggedas_block}
+{BEGIN logout_link}
+<a class=tablelinks href="login.php?a=logout" {$logoutlink_attrs}>{mlang_message LOG_OUT}</a>
+{END logout_link}
+{BEGIN changepwd_link}
+<a href="changepwd.php" class=tablelinks {$changepwdlink_attrs}>{mlang_message CHANGE_PASSWORD}</a>
+{END changepwd_link}
+</div>
+<div id="tables_block" class="shade captions">
+<!-- MenuBegin -->
+{$mainmenu}
+<!-- MenuEnd -->
+</div>
+</td></tr></table>
+{$footer}
+{END body}
+</body>
+</html>

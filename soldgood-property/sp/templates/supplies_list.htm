@@ -1,0 +1,376 @@
+<html {$html_attrs}>
+<head>
+<title>{$caption supplies}</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+{BEGIN style_block}
+<style>
+#height100{$id} {padding:10px;}
+#mastertable_block{$id} {margin-left:50px;margin-top:10px}
+#toplinks_block{$id} {width:100%; text-align:right;padding:3px}
+#toplinks_block{$id} * {padding:0px 10px;}
+#left_block{$id} { position:absolute;width:200px;{BEGIN RTL_block} right:10px;{END RTL_block}{BEGIN LTR_block} left:10px;{END LTR_block} overflow:visible;}
+#search_records_block{$id} {width:100%;}
+#search_records_block{$id} > * {vertical-align:middle;}
+#search_records_block{$id} select {margin:0px 0px;}
+#login_block{$id},#languages_block{$id} {padding:10px; margin-bottom:3px}
+#login_block{$id} div {margin-left:0px; padding:5px 0px;}
+#menu_block{$id} {margin-bottom:3px;width:auto;}
+{BEGIN shiftstyle_block}
+#records_block{$id} {padding-left:203px;{BEGIN RTL_block}padding:0px;padding-right:203px;{END RTL_block}}
+{END shiftstyle_block}
+.listIcons img.listIcon{margin:0 3px;opacity:0.3;filter:alpha(opacity=30);}
+#recordcontrols_block{$id} {padding:10px;}
+#record_controls{$id} > *,#newrecord_controls{$id} > * {margin:2px;vertical-align:middle;}
+#grid_block{$id} {margin-top:2px;}
+.grid_recordheader {padding:5px 0;}
+.grid_recordheader a {margin:0 5px;}
+.grid_recordheader input {margin:0 5px 1px 5px;}
+form#frmAdmin{$id} {display:inline;}
+body{margin:0px;padding:0px;}
+#searchOptions{$id}{margin-bottom: 3px;}
+#searchform{$id}{/*float: left;*/padding-left: 5px;}
+#searchPanelContainer{$id}{width: 200px}
+
+/*report styles*/
+#export_links{$id} * {padding:0}
+</style>
+{END style_block}
+{BEGIN iestyle_block}
+<!--[if IE]>
+<style>
+.grid {height:100%;}
+</style>
+<![endif]-->
+{END iestyle_block}
+</head>
+<body marginheight=0 marginwidth=0 {$bodyattrs}>
+{BEGIN body}
+{$header}
+<div id="height100{$id}">
+
+{BEGIN toplinks_block}
+<div id="toplinks_block{$id}">
+
+{BEGIN asearch_link}
+<a href="supplies_search.php" class="tablelinks3" {$advsearchlink_attrs}>{mlang_message ADVANCED_SEARCH}</a>
+{END asearch_link}
+
+
+
+
+
+</div>
+{END toplinks_block}
+
+{BEGIN search_records_block} 
+<div id="search_records_block{$id}" class="linedownbody main_table2 toplist">
+	<table width=100% style="border: none;">
+		<tr>
+			<td nowrap="nowrap" width=22><img src="include/img/arrow_topmenu.gif" align="absmiddle" alt=" "></td>
+			<td nowrap="nowrap" align=left>
+					{BEGIN searchform}
+				<!-- Search panel header for horizontal layouts -->
+				<span id="searchform{$id}" align="absmiddle">
+	<span id="searchPanelHeader{$id}">  
+		{$simpleSearchFieldCombo}
+		
+		{$simpleSearchTypeCombo}
+		
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		&nbsp;
+		{BEGIN searchform_search}
+			<span class="buttonborder"><input class="button" type="button" style="width: 18px; background-image: url(images/search/search.gif);" {$searchbutton_attrs} ></span>
+		{END searchform_search}
+		&nbsp;
+		{BEGIN searchform_showall}	
+		<span id="showall{$id}" class="buttonborder" {$showAllCont_attrs}><input type="button" class="button" value="{mlang_message SHOW_ALL}" {$showallbutton_attrs}></span>
+		{END searchform_showall}
+	</span>
+	{BEGIN searchPanelTopButtons}
+	<span>
+		&nbsp;
+		<span class="buttonborder"><input class="button" type="button" id="showSrchWin{$id}" style="width: 18px; background-image: url(images/search/showWindowPin.gif);" {$showHideSearchWin_attrs} ></span>
+		&nbsp;		
+		<span class="buttonborder"><input class="button" type="button" id="showOptPanel{$id}" style="width: 18px; background-image: url(images/search/showOptions.gif);" {$showHideSearchPanel_attrs} ></span>
+	</span>
+	{END searchPanelTopButtons}
+</span> 
+			{END searchform}
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+			<td nowrap="nowrap" align=right>
+						{BEGIN details_block}
+				<span {$details_attrs}>{mlang_message DETAILS_FOUND}: <b>{$records_found}</b>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			{END details_block}
+			
+			{BEGIN pages_block}
+				<span {$pages_attrs}>{mlang_message PAGE1} <b>{$page}</b> {mlang_message PAGE2} <b>{$maxpages}</b></span>
+			{END pages_block}
+				
+			&nbsp;&nbsp;&nbsp;&nbsp;
+				
+			{BEGIN recordspp_block}
+									{$recsPerPage}
+			{END recordspp_block}
+			</td>
+		</tr>
+	</table>
+</div>
+{END search_records_block} 
+
+{BEGIN left_block}
+<div id="left_block{$id}">
+{BEGIN languages_block}
+<div id="languages_block{$id}" class="blackshade toplist">
+<!---language-->
+<b>{BEGIN lang_label}{mlang_message LANGUAGE}:{END lang_label}</b>&nbsp;&nbsp;&nbsp;&nbsp;
+	<select {$langselector_attrs}>
+		<option value="Chinese (Hong Kong S.A.R.)" {$Chinese__Hong_Kong_S_A_R___langattrs}>中文(繁體)(香港特別行政區)</option>
+		<option value="English" {$English_langattrs}>English</option>
+	</select>
+</div>
+{END languages_block}
+
+{BEGIN security_block}
+<div id="login_block{$id}" class="blackshade toplist">
+	<div style="font-weight:normal;">{mlang_message LOGGED_AS}&nbsp;<b>{$username}</b></div>
+	<br><a class="tablelinks" href="login.php?a=logout" {$logoutlink_attrs}>{mlang_message LOG_OUT}</a>
+<!-- Permissions -->
+{BEGIN changepwd_link}
+	<br><a class="tablelinks" href="changepwd.php" {$changepwdlink_attrs}>{mlang_message CHANGE_PASSWORD}</a>
+{END changepwd_link}
+</div>
+{END security_block}
+
+
+<!-- search panel and window -->
+<div id="searchPanelContainer{$id}" class="searchPanelContainer">
+{$adv_search_panel}
+</div>
+ 
+<!-- MenuBegin -->
+{BEGIN menu_block}
+<div id="menu_block{$id}" class="blackshade toplist">
+<!-- MainMenuBegin -->
+{$mainmenu}
+<!-- MainMenuEnd -->
+</div>
+{END menu_block}
+
+<!-- MenuEnd -->
+</div>
+{END left_block}
+
+<div id="records_block{$id}" moveForSearch="move{$id}" {$marginStyle}>
+{BEGIN recordcontrols_block}
+<div id="recordcontrols_block{$id}" class="main_table2" >
+
+{BEGIN newrecord_controls}
+<span id="newrecord_controls{$id}">
+{BEGIN add_link}
+<span class=buttonborder><input type=button class="button" value="{mlang_message ADD_NEW}" {$addlink_attrs}></span>
+{END add_link}
+
+</span>
+{END newrecord_controls}
+
+{BEGIN record_controls}
+<span id="record_controls{$id}">
+
+
+{BEGIN deleteselected_link}
+<span class=buttonborder {$deleteselectedlink_span}><input type=button class="button" value="{mlang_message DELETE_SELECTED}" {$deleteselectedlink_attrs}></span>
+{END deleteselected_link}
+
+
+</span>
+{END record_controls}
+</div>
+{END recordcontrols_block}
+<div class="message" id="usermessage{$id}">{$user_message}</div>
+
+
+
+{BEGIN grid_block}
+<div id="grid_block{$id}" >
+<table name="maintable" class="data" cellspacing="0" cellpadding="5" border="0">
+{BEGIN grid_header}
+<thead>
+<tr class="blackshade" valign="top" {$gridHeader_attrs}>
+{BEGIN record_header}
+
+{BEGIN listIcons_column}
+	<th align="center" class="headerlist listIcons" {$widthListIcons} iEditCont="all" nowrap="nowrap">&nbsp;</th>
+{END listIcons_column}	
+
+{BEGIN checkbox_column}
+<th width="20" align="center" class="headerlist">
+<input type="checkbox" {$checkboxheader_attrs}>
+</th>
+{END checkbox_column}
+
+
+{BEGIN icon_fieldheadercolumn}
+<th class="headerlist" align="center" style="vertical-align:baseline;">
+{BEGIN icon_fieldheader}
+<a class="tablelinks" {$icon_orderlinkattrs}>
+{$label supplies icon}</a>
+{END icon_fieldheader}
+</th>
+{END icon_fieldheadercolumn}
+{BEGIN estate_fieldheadercolumn}
+<th class="headerlist" align="center" style="vertical-align:baseline;">
+{BEGIN estate_fieldheader}
+<a class="tablelinks" {$estate_orderlinkattrs}>
+{$label supplies estate}</a>
+{END estate_fieldheader}
+</th>
+{END estate_fieldheadercolumn}
+{BEGIN area_fieldheadercolumn}
+<th class="headerlist" align="center" style="vertical-align:baseline;">
+{BEGIN area_fieldheader}
+<a class="tablelinks" {$area_orderlinkattrs}>
+{$label supplies area}</a>
+{END area_fieldheader}
+</th>
+{END area_fieldheadercolumn}
+{BEGIN unit_price_fieldheadercolumn}
+<th class="headerlist" align="center" style="vertical-align:baseline;">
+{BEGIN unit_price_fieldheader}
+<a class="tablelinks" {$unit_price_orderlinkattrs}>
+{$label supplies unit_price}</a>
+{END unit_price_fieldheader}
+</th>
+{END unit_price_fieldheadercolumn}
+{BEGIN height_id_fieldheadercolumn}
+<th class="headerlist" align="center" style="vertical-align:baseline;">
+{BEGIN height_id_fieldheader}
+<a class="tablelinks" {$height_id_orderlinkattrs}>
+{$label supplies height_id}</a>
+{END height_id_fieldheader}
+</th>
+{END height_id_fieldheadercolumn}
+{BEGIN ps_id_fieldheadercolumn}
+<th class="headerlist" align="center" style="vertical-align:baseline;">
+{BEGIN ps_id_fieldheader}
+<a class="tablelinks" {$ps_id_orderlinkattrs}>
+{$label supplies ps_id}</a>
+{END ps_id_fieldheader}
+</th>
+{END ps_id_fieldheadercolumn}
+{BEGIN modified_date_fieldheadercolumn}
+<th class="headerlist" align="center" style="vertical-align:baseline;">
+{BEGIN modified_date_fieldheader}
+<a class="tablelinks" {$modified_date_orderlinkattrs}>
+{$label supplies modified_date}</a>
+{END modified_date_fieldheader}
+</th>
+{END modified_date_fieldheadercolumn}
+{BEGIN endrecordheader_block}
+<th class="body2"></th>
+{END endrecordheader_block}
+{END record_header}
+</tr>
+</thead>
+{END grid_header}
+
+<tbody>
+{BEGIN grid_row}
+<tr valign="top" {$rowstyle} {$rowattrs}> 
+{BEGIN grid_record}
+
+{BEGIN listIcons_column}
+	<td align="center" valign="middle" iEditCont="all" class="borderbody listIcons" nowrap="nowrap">
+		{BEGIN edit_column}
+	{BEGIN edit_link}
+	<a class="tablelinks" {$editlink_attrs} title="{mlang_message EDIT}"><img class="listIcon" src="images/icon_edit_new.gif" align="middle" alt="{mlang_message EDIT}" border="0"></a>
+	{END edit_link}
+	{END edit_column}
+
+	
+	
+		{BEGIN view_column}
+	{BEGIN view_link}
+	<a class="tablelinks" {$viewlink_attrs} title="{mlang_message VIEW}"><img class="listIcon" src="images/icon_view_new.gif" align="middle" alt="{mlang_message VIEW}" border="0"></a>
+	{END view_link}
+	{END view_column}
+	</td>	
+{END listIcons_column}	
+
+{BEGIN checkbox_column}
+<td align="center" valign="middle" class="borderbody" iEditCont="checkBox" width="20">
+{BEGIN checkbox}
+<input type="checkbox" {$checkbox_attrs}>
+{END checkbox}
+</td>
+{END checkbox_column}
+
+
+{BEGIN icon_fieldcolumn}
+<td valign="middle" class="borderbody" {$icon_style}>
+{$icon_value}
+</td>
+{END icon_fieldcolumn}
+{BEGIN estate_fieldcolumn}
+<td valign="middle" class="borderbody" {$estate_style}>
+{$estate_value}
+</td>
+{END estate_fieldcolumn}
+{BEGIN area_fieldcolumn}
+<td valign="middle" class="borderbody" {$area_style}>
+{$area_value}
+</td>
+{END area_fieldcolumn}
+{BEGIN unit_price_fieldcolumn}
+<td valign="middle" class="borderbody" {$unit_price_style}>
+{$unit_price_value}
+</td>
+{END unit_price_fieldcolumn}
+{BEGIN height_id_fieldcolumn}
+<td valign="middle" class="borderbody" {$height_id_style}>
+{$height_id_value}
+</td>
+{END height_id_fieldcolumn}
+{BEGIN ps_id_fieldcolumn}
+<td valign="middle" class="borderbody" {$ps_id_style}>
+{$ps_id_value}
+</td>
+{END ps_id_fieldcolumn}
+{BEGIN modified_date_fieldcolumn}
+<td valign="middle" class="borderbody" {$modified_date_style}>
+{$modified_date_value}
+</td>
+{END modified_date_fieldcolumn}
+
+{BEGIN endrecord_block}
+<td class="body2" {$endrecordblock_attrs}></td>
+{END endrecord_block}
+{END grid_record}
+</tr>
+{END grid_row}
+</tbody>
+
+</table>
+</div>
+{END grid_block}
+{BEGIN pagination_block}
+<div id="pagination_block{$id}" align="center" class="toplist" >{$pagination}</div>
+{END pagination_block}
+
+{BEGIN message_block}
+<div id="message_block{$id}" align="center" valign="middle" class="toplist">
+	<b>{$message}</b>
+</div>
+{END message_block}
+
+</div>
+</div>
+{$footer}
+{END body}
+</body>
+</html>

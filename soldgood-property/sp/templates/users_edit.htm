@@ -1,0 +1,120 @@
+<html {$html_attrs}>
+<head><title>{$caption users}</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+{BEGIN style_block}
+<style>
+#center_block {width:500px;margin:0 auto;}
+#contents_block{$id} {text-align:center;width:100%}
+#header_block{$id} {width:100%;white-space:nowrap;height:31px;padding-top:5px;text-align:center}
+#fields_block{$id} {width:100%;}
+#fields_block{$id} td.es{padding:4px 10px;}
+#buttons_block{$id} {width:100%;padding-bottom:5px;text-align:center}
+#required_block{$id} {text-align:left;padding:5px}
+#span{$id} {margin:0 20px 0 20px;}
+</style>
+{END style_block}
+</head>
+
+<body {$bodyattrs}>
+{BEGIN body}
+{$header}
+{BEGIN flybody}
+<table align="center" id="center_block{$id}" cellpadding="0" cellspacing="0"><tr><td id="contents_block{$id}">
+<div class="upeditmenu" id="header_block{$id}">
+{$caption users}, {mlang_message EDIT_RECORD} [
+{$label users id}: {$show_key1}
+]
+</div>
+
+{BEGIN message_block}
+<DIV id="message_block{$id}" align="center" class="downedit">{$message}</div>
+{END message_block}
+
+<table cellpadding="4" cellspacing="0" border="0" id="fields_block{$id}">
+{BEGIN name_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			{BEGIN name_label}{$label users name}{END name_label}
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$name_editcontrol}&nbsp;
+		</td>
+	</tr>
+{END name_fieldblock}
+{BEGIN cn_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			{BEGIN cn_label}{$label users cn}{END cn_label}
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$cn_editcontrol}&nbsp;
+		</td>
+	</tr>
+{END cn_fieldblock}
+{BEGIN email_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			{BEGIN email_label}{$label users email}{END email_label}
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$email_editcontrol}&nbsp;
+		</td>
+	</tr>
+{END email_fieldblock}
+{BEGIN icon_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			{BEGIN icon_label}{$label users icon}{END icon_label}
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$icon_editcontrol}&nbsp;
+		</td>
+	</tr>
+{END icon_fieldblock}
+{BEGIN identity_id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			{BEGIN identity_id_label}{$label users identity_id}{END identity_id_label}
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$identity_id_editcontrol}&nbsp;
+		</td>
+	</tr>
+{END identity_id_fieldblock}
+</table>
+
+<div class="main_table2" id="buttons_block{$id}">
+{BEGIN legend}
+<div id="required_block{$id}" class="toplist" ><img src="images/icon_required.gif" alt="bullet"> - {mlang_message REQUIRED_FIELD}</div>
+{END legend}
+{$legendBreak}
+{BEGIN save_button}
+ <span class="buttonborder"><input class="button" type="submit" value="{mlang_message SAVE}" {$savebutton_attrs}></span>
+{END save_button}
+{BEGIN reset_button}
+ <span class="buttonborder"><input class="button" type="reset" value="{mlang_message RESET}" {$resetbutton_attrs}></span>
+{END reset_button}
+<span id="span{$id}">&nbsp;</span>
+{BEGIN prev_button}
+ <span class="buttonborder"><input class="button" type="reset" value=" <<< " {$prevbutton_attrs}></span>
+{END prev_button}
+{BEGIN back_button}
+ <span class="buttonborder"><input class="button" type="reset" value="{mlang_message BACK_TO_LIST}" {$backbutton_attrs}></span>
+{END back_button}
+{BEGIN next_button}
+ <span class="buttonborder"><input class="button" type="reset" value=" >>> " {$nextbutton_attrs}></span>
+{END next_button}
+</div>
+</td></tr></table>
+{END flybody}
+
+{BEGIN detail_tables}
+{END detail_tables}
+<br><br>
+{$footer}
+{END body}
+</body>
+</html>

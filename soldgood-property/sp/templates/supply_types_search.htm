@@ -1,0 +1,102 @@
+<html {$html_attrs}>
+<head>
+<title>{$caption supply_types}: {mlang_message ADV_SEARCH}</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+<style>
+#center_block{$id} {margin:0 auto;}
+#contents_block{$id} {text-align:center;}
+#header_block{$id} {white-space:nowrap;height:31px;padding-top:5px;}
+#main_block{$id} {padding:10px 0;}
+#inmain_block{$id} {margin:0 10px}
+#fields_block{$id} {width:100%}
+#buttons_block{$id} {width:100%;padding:10px 0;}
+#buttons_block{$id} > * {margin:0 2px}
+</style>
+<!--[if IE]>
+<style>
+#main_block {padding:10px 10;}
+#inmain_block {margin:0 0px}
+</style>
+<![endif]-->
+</head>
+<body bgcolor=white {$bodyattrs}>
+{BEGIN body}
+{$header}	
+{BEGIN contents_block}
+<table align=center id="center_block{$id}"><tr><td id="contents_block{$id}">
+<div  class=tableheader id="header_block{$id}">
+{$caption supply_types} - {mlang_message ADVANCED_SEARCH}
+</div>
+
+{BEGIN conditions_block}
+<DIV id="conditions_block{$id}" class=header2>
+<span class=fieldname>Criteria:&nbsp;</span>	
+	<input type="radio" name="srchType" {$all_checkbox}>{BEGIN all_checkbox_label}{mlang_message ALL_CONDITIONS}{END all_checkbox_label}
+	&nbsp;&nbsp;&nbsp;
+	<input type="radio" name="srchType" {$any_checkbox}>{BEGIN any_checkbox_label}{mlang_message ANY_CONDITION}{END any_checkbox_label}
+</div>
+{END conditions_block}
+
+<table cellpadding=4 cellspacing=0 border=0 id="fields_block{$id}">
+<tr valign=center class=blackshade>
+<td align=center valign=middle>&nbsp;</td>
+<td width=30 align=center valign=middle class=fieldname>NOT</td>
+<td colspan=3 align=center valign=middle>&nbsp; </td></tr>
+
+{BEGIN id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supply_types id}
+	<td align=center><input type=checkbox {$id_notbox}></td>
+	<td>{$searchtype_id}</td>
+	
+	<td width=270>{$id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$id_editcontrol1}&nbsp;</td>
+</tr>
+{END id_fieldblock}
+{BEGIN value_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supply_types value}
+	<td align=center><input type=checkbox {$value_notbox}></td>
+	<td>{$searchtype_value}</td>
+	
+	<td width=270>{$value_editcontrol}&nbsp;</td>
+
+	<td width=270>{$value_editcontrol1}&nbsp;</td>
+</tr>
+{END value_fieldblock}
+{BEGIN language_type_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supply_types language_type}
+	<td align=center><input type=checkbox {$language_type_notbox}></td>
+	<td>{$searchtype_language_type}</td>
+	
+	<td width=270>{$language_type_editcontrol}&nbsp;</td>
+
+	<td width=270>{$language_type_editcontrol1}&nbsp;</td>
+</tr>
+{END language_type_fieldblock}
+</table>
+
+<div class="blackshade" id="buttons_block{$id}">
+{BEGIN search_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message SEARCH}" {$searchbutton_attrs}></span>
+{END search_button} 
+{BEGIN reset_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message RESET}" {$resetbutton_attrs}></span>
+{END reset_button}
+{BEGIN back_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message BACK_TO_LIST}" {$backbutton_attrs}></span>
+{END back_button}
+</div>
+</td></tr></table>
+{END contents_block}
+{$footer}
+{END body}
+</body>
+</html>
+	
+

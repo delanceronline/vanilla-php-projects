@@ -1,0 +1,388 @@
+<html {$html_attrs}>
+<head>
+<title>{$caption supplies}: {mlang_message ADV_SEARCH}</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+<style>
+#center_block{$id} {margin:0 auto;}
+#contents_block{$id} {text-align:center;}
+#header_block{$id} {white-space:nowrap;height:31px;padding-top:5px;}
+#main_block{$id} {padding:10px 0;}
+#inmain_block{$id} {margin:0 10px}
+#fields_block{$id} {width:100%}
+#buttons_block{$id} {width:100%;padding:10px 0;}
+#buttons_block{$id} > * {margin:0 2px}
+</style>
+<!--[if IE]>
+<style>
+#main_block {padding:10px 10;}
+#inmain_block {margin:0 0px}
+</style>
+<![endif]-->
+</head>
+<body bgcolor=white {$bodyattrs}>
+{BEGIN body}
+{$header}	
+{BEGIN contents_block}
+<table align=center id="center_block{$id}"><tr><td id="contents_block{$id}">
+<div  class=tableheader id="header_block{$id}">
+{$caption supplies} - {mlang_message ADVANCED_SEARCH}
+</div>
+
+{BEGIN conditions_block}
+<DIV id="conditions_block{$id}" class=header2>
+<span class=fieldname>Criteria:&nbsp;</span>	
+	<input type="radio" name="srchType" {$all_checkbox}>{BEGIN all_checkbox_label}{mlang_message ALL_CONDITIONS}{END all_checkbox_label}
+	&nbsp;&nbsp;&nbsp;
+	<input type="radio" name="srchType" {$any_checkbox}>{BEGIN any_checkbox_label}{mlang_message ANY_CONDITION}{END any_checkbox_label}
+</div>
+{END conditions_block}
+
+<table cellpadding=4 cellspacing=0 border=0 id="fields_block{$id}">
+<tr valign=center class=blackshade>
+<td align=center valign=middle>&nbsp;</td>
+<td width=30 align=center valign=middle class=fieldname>NOT</td>
+<td colspan=3 align=center valign=middle>&nbsp; </td></tr>
+
+{BEGIN id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies id}
+	<td align=center><input type=checkbox {$id_notbox}></td>
+	<td>{$searchtype_id}</td>
+	
+	<td width=270>{$id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$id_editcontrol1}&nbsp;</td>
+</tr>
+{END id_fieldblock}
+{BEGIN estate_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies estate}
+	<td align=center><input type=checkbox {$estate_notbox}></td>
+	<td>{$searchtype_estate}</td>
+	
+	<td width=270>{$estate_editcontrol}&nbsp;</td>
+
+	<td width=270>{$estate_editcontrol1}&nbsp;</td>
+</tr>
+{END estate_fieldblock}
+{BEGIN creation_date_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies creation_date}
+	<td align=center><input type=checkbox {$creation_date_notbox}></td>
+	<td>{$searchtype_creation_date}</td>
+	
+	<td width=270>{$creation_date_editcontrol}&nbsp;</td>
+
+	<td width=270>{$creation_date_editcontrol1}&nbsp;</td>
+</tr>
+{END creation_date_fieldblock}
+{BEGIN district_id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies district_id}
+	<td align=center><input type=checkbox {$district_id_notbox}></td>
+	<td>{$searchtype_district_id}</td>
+	
+	<td width=270>{$district_id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$district_id_editcontrol1}&nbsp;</td>
+</tr>
+{END district_id_fieldblock}
+{BEGIN user_id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies user_id}
+	<td align=center><input type=checkbox {$user_id_notbox}></td>
+	<td>{$searchtype_user_id}</td>
+	
+	<td width=270>{$user_id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$user_id_editcontrol1}&nbsp;</td>
+</tr>
+{END user_id_fieldblock}
+{BEGIN pic8_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies pic8}
+	<td align=center><input type=checkbox {$pic8_notbox}></td>
+	<td>{$searchtype_pic8}</td>
+	
+	<td width=270>{$pic8_editcontrol}&nbsp;</td>
+
+	<td width=270>{$pic8_editcontrol1}&nbsp;</td>
+</tr>
+{END pic8_fieldblock}
+{BEGIN area_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies area}
+	<td align=center><input type=checkbox {$area_notbox}></td>
+	<td>{$searchtype_area}</td>
+	
+	<td width=270>{$area_editcontrol}&nbsp;</td>
+
+	<td width=270>{$area_editcontrol1}&nbsp;</td>
+</tr>
+{END area_fieldblock}
+{BEGIN address_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies address}
+	<td align=center><input type=checkbox {$address_notbox}></td>
+	<td>{$searchtype_address}</td>
+	
+	<td width=270>{$address_editcontrol}&nbsp;</td>
+
+	<td width=270>{$address_editcontrol1}&nbsp;</td>
+</tr>
+{END address_fieldblock}
+{BEGIN unit_price_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies unit_price}
+	<td align=center><input type=checkbox {$unit_price_notbox}></td>
+	<td>{$searchtype_unit_price}</td>
+	
+	<td width=270>{$unit_price_editcontrol}&nbsp;</td>
+
+	<td width=270>{$unit_price_editcontrol1}&nbsp;</td>
+</tr>
+{END unit_price_fieldblock}
+{BEGIN years_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies years}
+	<td align=center><input type=checkbox {$years_notbox}></td>
+	<td>{$searchtype_years}</td>
+	
+	<td width=270>{$years_editcontrol}&nbsp;</td>
+
+	<td width=270>{$years_editcontrol1}&nbsp;</td>
+</tr>
+{END years_fieldblock}
+{BEGIN rc_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies rc}
+	<td align=center><input type=checkbox {$rc_notbox}></td>
+	<td>{$searchtype_rc}</td>
+	
+	<td width=270>{$rc_editcontrol}&nbsp;</td>
+
+	<td width=270>{$rc_editcontrol1}&nbsp;</td>
+</tr>
+{END rc_fieldblock}
+{BEGIN hc_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies hc}
+	<td align=center><input type=checkbox {$hc_notbox}></td>
+	<td>{$searchtype_hc}</td>
+	
+	<td width=270>{$hc_editcontrol}&nbsp;</td>
+
+	<td width=270>{$hc_editcontrol1}&nbsp;</td>
+</tr>
+{END hc_fieldblock}
+{BEGIN sf_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies sf}
+	<td align=center><input type=checkbox {$sf_notbox}></td>
+	<td>{$searchtype_sf}</td>
+	
+	<td width=270>{$sf_editcontrol}&nbsp;</td>
+
+	<td width=270>{$sf_editcontrol1}&nbsp;</td>
+</tr>
+{END sf_fieldblock}
+{BEGIN height_id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies height_id}
+	<td align=center><input type=checkbox {$height_id_notbox}></td>
+	<td>{$searchtype_height_id}</td>
+	
+	<td width=270>{$height_id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$height_id_editcontrol1}&nbsp;</td>
+</tr>
+{END height_id_fieldblock}
+{BEGIN modified_date_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies modified_date}
+	<td align=center><input type=checkbox {$modified_date_notbox}></td>
+	<td>{$searchtype_modified_date}</td>
+	
+	<td width=270>{$modified_date_editcontrol}&nbsp;</td>
+
+	<td width=270>{$modified_date_editcontrol1}&nbsp;</td>
+</tr>
+{END modified_date_fieldblock}
+{BEGIN feature_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies feature}
+	<td align=center><input type=checkbox {$feature_notbox}></td>
+	<td>{$searchtype_feature}</td>
+	
+	<td width=270>{$feature_editcontrol}&nbsp;</td>
+
+	<td width=270>{$feature_editcontrol1}&nbsp;</td>
+</tr>
+{END feature_fieldblock}
+{BEGIN remark_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies remark}
+	<td align=center><input type=checkbox {$remark_notbox}></td>
+	<td>{$searchtype_remark}</td>
+	
+	<td width=270>{$remark_editcontrol}&nbsp;</td>
+
+	<td width=270>{$remark_editcontrol1}&nbsp;</td>
+</tr>
+{END remark_fieldblock}
+{BEGIN icon_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies icon}
+	<td align=center><input type=checkbox {$icon_notbox}></td>
+	<td>{$searchtype_icon}</td>
+	
+	<td width=270>{$icon_editcontrol}&nbsp;</td>
+
+	<td width=270>{$icon_editcontrol1}&nbsp;</td>
+</tr>
+{END icon_fieldblock}
+{BEGIN pic1_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies pic1}
+	<td align=center><input type=checkbox {$pic1_notbox}></td>
+	<td>{$searchtype_pic1}</td>
+	
+	<td width=270>{$pic1_editcontrol}&nbsp;</td>
+
+	<td width=270>{$pic1_editcontrol1}&nbsp;</td>
+</tr>
+{END pic1_fieldblock}
+{BEGIN pic2_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies pic2}
+	<td align=center><input type=checkbox {$pic2_notbox}></td>
+	<td>{$searchtype_pic2}</td>
+	
+	<td width=270>{$pic2_editcontrol}&nbsp;</td>
+
+	<td width=270>{$pic2_editcontrol1}&nbsp;</td>
+</tr>
+{END pic2_fieldblock}
+{BEGIN pic3_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies pic3}
+	<td align=center><input type=checkbox {$pic3_notbox}></td>
+	<td>{$searchtype_pic3}</td>
+	
+	<td width=270>{$pic3_editcontrol}&nbsp;</td>
+
+	<td width=270>{$pic3_editcontrol1}&nbsp;</td>
+</tr>
+{END pic3_fieldblock}
+{BEGIN pic4_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies pic4}
+	<td align=center><input type=checkbox {$pic4_notbox}></td>
+	<td>{$searchtype_pic4}</td>
+	
+	<td width=270>{$pic4_editcontrol}&nbsp;</td>
+
+	<td width=270>{$pic4_editcontrol1}&nbsp;</td>
+</tr>
+{END pic4_fieldblock}
+{BEGIN pic5_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies pic5}
+	<td align=center><input type=checkbox {$pic5_notbox}></td>
+	<td>{$searchtype_pic5}</td>
+	
+	<td width=270>{$pic5_editcontrol}&nbsp;</td>
+
+	<td width=270>{$pic5_editcontrol1}&nbsp;</td>
+</tr>
+{END pic5_fieldblock}
+{BEGIN pic6_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies pic6}
+	<td align=center><input type=checkbox {$pic6_notbox}></td>
+	<td>{$searchtype_pic6}</td>
+	
+	<td width=270>{$pic6_editcontrol}&nbsp;</td>
+
+	<td width=270>{$pic6_editcontrol1}&nbsp;</td>
+</tr>
+{END pic6_fieldblock}
+{BEGIN pic7_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies pic7}
+	<td align=center><input type=checkbox {$pic7_notbox}></td>
+	<td>{$searchtype_pic7}</td>
+	
+	<td width=270>{$pic7_editcontrol}&nbsp;</td>
+
+	<td width=270>{$pic7_editcontrol1}&nbsp;</td>
+</tr>
+{END pic7_fieldblock}
+{BEGIN ps_id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies ps_id}
+	<td align=center><input type=checkbox {$ps_id_notbox}></td>
+	<td>{$searchtype_ps_id}</td>
+	
+	<td width=270>{$ps_id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$ps_id_editcontrol1}&nbsp;</td>
+</tr>
+{END ps_id_fieldblock}
+{BEGIN zone_id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies zone_id}
+	<td align=center><input type=checkbox {$zone_id_notbox}></td>
+	<td>{$searchtype_zone_id}</td>
+	
+	<td width=270>{$zone_id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$zone_id_editcontrol1}&nbsp;</td>
+</tr>
+{END zone_id_fieldblock}
+{BEGIN supply_mode_id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies supply_mode_id}
+	<td align=center><input type=checkbox {$supply_mode_id_notbox}></td>
+	<td>{$searchtype_supply_mode_id}</td>
+	
+	<td width=270>{$supply_mode_id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$supply_mode_id_editcontrol1}&nbsp;</td>
+</tr>
+{END supply_mode_id_fieldblock}
+{BEGIN support_type_id_fieldblock}		
+<tr class=shade>
+	<td class=fieldname>{$label supplies support_type_id}
+	<td align=center><input type=checkbox {$support_type_id_notbox}></td>
+	<td>{$searchtype_support_type_id}</td>
+	
+	<td width=270>{$support_type_id_editcontrol}&nbsp;</td>
+
+	<td width=270>{$support_type_id_editcontrol1}&nbsp;</td>
+</tr>
+{END support_type_id_fieldblock}
+</table>
+
+<div class="blackshade" id="buttons_block{$id}">
+{BEGIN search_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message SEARCH}" {$searchbutton_attrs}></span>
+{END search_button} 
+{BEGIN reset_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message RESET}" {$resetbutton_attrs}></span>
+{END reset_button}
+{BEGIN back_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message BACK_TO_LIST}" {$backbutton_attrs}></span>
+{END back_button}
+</div>
+</td></tr></table>
+{END contents_block}
+{$footer}
+{END body}
+</body>
+</html>
+	
+

@@ -1,0 +1,328 @@
+<html {$html_attrs}>
+<head><title>{$caption supplies}</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+{BEGIN style_block}
+<style>
+#height100{$id} {padding:10px;} 
+#center_block{$id} {width:55%;margin:0 auto;min-width: 500px;}
+#contents_block{$id} {text-align:center;}
+#header_block{$id} {white-space:nowrap;height:31px;padding:5px;text-align:center;}
+#fields_block{$id} {width:100%}
+#fields_block{$id} td.es{padding:4px 10px;}
+#buttons_block{$id} {padding:5px;white-space:nowrap;text-align:center;}
+#required_block{$id} {text-align:left;padding:5px}
+a.pdf{float:left;}
+</style>
+{END style_block}
+</head>
+<body {$bodyattrs}>
+{BEGIN body}
+{$header}
+<div id="height100{$id}" align="center">
+
+{BEGIN flybody}
+<table cellpadding=0 cellspacing=0 class="main_table2" border=0 align=center width=400><tr><td id="contents_block">
+<div id="header_block{$id}" class="upeditmenu">
+{$caption supplies}, {mlang_message VIEW_RECORD} [
+{$label supplies id}: {$show_key1}
+]
+</div>
+
+<table cellpadding="4" cellspacing="0" border="0" id="fields_block{$id}">
+{BEGIN supply_mode_id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies supply_mode_id}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$supply_mode_id_value}&nbsp;
+		</td>
+	</tr>
+{END supply_mode_id_fieldblock}
+{BEGIN support_type_id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies support_type_id}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$support_type_id_value}&nbsp;
+		</td>
+	</tr>
+{END support_type_id_fieldblock}
+{BEGIN zone_id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies zone_id}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$zone_id_value}&nbsp;
+		</td>
+	</tr>
+{END zone_id_fieldblock}
+{BEGIN district_id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies district_id}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$district_id_value}&nbsp;
+		</td>
+	</tr>
+{END district_id_fieldblock}
+{BEGIN estate_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies estate}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$estate_value}&nbsp;
+		</td>
+	</tr>
+{END estate_fieldblock}
+{BEGIN area_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies area}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$area_value}&nbsp;
+		</td>
+	</tr>
+{END area_fieldblock}
+{BEGIN address_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies address}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$address_value}&nbsp;
+		</td>
+	</tr>
+{END address_fieldblock}
+{BEGIN unit_price_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies unit_price}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$unit_price_value}&nbsp;
+		</td>
+	</tr>
+{END unit_price_fieldblock}
+{BEGIN years_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies years}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$years_value}&nbsp;
+		</td>
+	</tr>
+{END years_fieldblock}
+{BEGIN ps_id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies ps_id}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$ps_id_value}&nbsp;
+		</td>
+	</tr>
+{END ps_id_fieldblock}
+{BEGIN rc_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies rc}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$rc_value}&nbsp;
+		</td>
+	</tr>
+{END rc_fieldblock}
+{BEGIN hc_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies hc}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$hc_value}&nbsp;
+		</td>
+	</tr>
+{END hc_fieldblock}
+{BEGIN sf_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies sf}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$sf_value}&nbsp;
+		</td>
+	</tr>
+{END sf_fieldblock}
+{BEGIN height_id_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies height_id}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$height_id_value}&nbsp;
+		</td>
+	</tr>
+{END height_id_fieldblock}
+{BEGIN feature_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies feature}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$feature_value}&nbsp;
+		</td>
+	</tr>
+{END feature_fieldblock}
+{BEGIN remark_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies remark}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$remark_value}&nbsp;
+		</td>
+	</tr>
+{END remark_fieldblock}
+{BEGIN icon_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies icon}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$icon_value}&nbsp;
+		</td>
+	</tr>
+{END icon_fieldblock}
+{BEGIN pic1_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies pic1}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$pic1_value}&nbsp;
+		</td>
+	</tr>
+{END pic1_fieldblock}
+{BEGIN pic2_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies pic2}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$pic2_value}&nbsp;
+		</td>
+	</tr>
+{END pic2_fieldblock}
+{BEGIN pic3_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies pic3}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$pic3_value}&nbsp;
+		</td>
+	</tr>
+{END pic3_fieldblock}
+{BEGIN pic4_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies pic4}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$pic4_value}&nbsp;
+		</td>
+	</tr>
+{END pic4_fieldblock}
+{BEGIN pic5_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies pic5}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$pic5_value}&nbsp;
+		</td>
+	</tr>
+{END pic5_fieldblock}
+{BEGIN pic6_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies pic6}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$pic6_value}&nbsp;
+		</td>
+	</tr>
+{END pic6_fieldblock}
+{BEGIN pic7_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies pic7}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$pic7_value}&nbsp;
+		</td>
+	</tr>
+{END pic7_fieldblock}
+{BEGIN pic8_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies pic8}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$pic8_value}&nbsp;
+		</td>
+	</tr>
+{END pic8_fieldblock}
+{BEGIN creation_date_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies creation_date}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$creation_date_value}&nbsp;
+		</td>
+	</tr>
+{END creation_date_fieldblock}
+{BEGIN modified_date_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			<b>{$label supplies modified_date}</b>
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$modified_date_value}&nbsp;
+		</td>
+	</tr>
+{END modified_date_fieldblock}
+</table>
+
+<div class="toplist" id="buttons_block{$id}">
+{BEGIN prev_button}
+ <span class=buttonborder><input class=button type=reset value=" <<< " {$prevbutton_attrs}></span>
+{END prev_button}
+{BEGIN back_button}
+ <span class=buttonborder><input class=button type=reset value="{mlang_message BACK_TO_LIST}" onclick="window.location.href='supplies_list.php?a=return'" {$backbutton_attrs}></span>
+{END back_button}
+{BEGIN next_button}
+ <span class=buttonborder><input class=button type=reset value=" >>> " {$nextbutton_attrs} ></span>
+{END next_button}
+</div>
+</td></tr></table>
+{END flybody}
+</div>
+
+{BEGIN detail_tables}
+{END detail_tables}
+<br><br>
+{$footer}
+{END body}
+</body>
+</html>
