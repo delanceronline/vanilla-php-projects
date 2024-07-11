@@ -1,0 +1,17 @@
+{
+    "propel": {
+        "database": {
+            "connections": {
+                "default": {
+                    "adapter": "mysql",
+                    "dsn": "mysql:host=tat-addon.ck8i0gxae4bm.ap-southeast-1.rds.amazonaws.com;port=3306;dbname=tat",
+                    "user": "root",
+                    "password": "iure8xcvj",
+                    "settings": {
+                        "charset": "utf8"
+                    }
+                }
+            }
+        }
+    }
+}

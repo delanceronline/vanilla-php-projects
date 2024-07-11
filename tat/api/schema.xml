@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" namespace="TAT" defaultPhpNamingMethod="underscore">
+    <table name="ads" idMethod="native" phpName="Ads" namespace="Backend">
+        <column name="id" phpName="Id" type="INTEGER" sqlType="int(11) unsigned" primaryKey="true" autoIncrement="true"
+                required="true"/>
+        <column name="filename" phpName="Filename" type="VARCHAR" size="128"/>
+        <column name="url" phpName="Url" type="VARCHAR" size="255"/>
+        <column name="creationDate" phpName="Creationdate" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="editonDate" phpName="Editondate" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP"/>
+        <vendor type="mysql">
+            <parameter name="Engine" value="InnoDB"/>
+        </vendor>
+    </table>
+    <table name="coupons" idMethod="native" phpName="Coupons" namespace="Backend">
+        <column name="id" phpName="Id" type="INTEGER" sqlType="int(11) unsigned" primaryKey="true" autoIncrement="true"
+                required="true"/>
+        <column name="title" phpName="Title" type="VARCHAR" size="128"/>
+        <column name="detail" phpName="Detail" type="LONGVARCHAR"/>
+        <column name="picURL" phpName="Picurl" type="VARCHAR" size="128"/>
+        <column name="status" phpName="Status" type="INTEGER" size="1" required="true" defaultValue="1"/>
+        <column name="creationDate" phpName="Creationdate" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="editionDate" phpName="Editiondate" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP"/>
+        <vendor type="mysql">
+            <parameter name="Engine" value="InnoDB"/>
+        </vendor>
+    </table>
+    <table name="devices" idMethod="native" phpName="Devices" namespace="Backend">
+        <column name="id" phpName="Id" type="INTEGER" size="10" sqlType="int(10) unsigned" primaryKey="true"
+                autoIncrement="true" required="true"/>
+        <column name="registration_id" phpName="RegistrationId" type="VARCHAR" size="4096" sqlType="varbinary(4096)"
+                required="true"/>
+        <column name="device_type" phpName="DeviceType" type="CHAR" sqlType="enum('android','ios')" required="true"
+                defaultValue="android"/>
+        <vendor type="mysql">
+            <parameter name="Engine" value="InnoDB"/>
+        </vendor>
+    </table>
+    <table name="forgetPassToken" idMethod="native" phpName="Forgetpasstoken" namespace="Backend">
+        <column name="id" phpName="Id" type="INTEGER" sqlType="int(11) unsigned" primaryKey="true" autoIncrement="true"
+                required="true"/>
+        <column name="token" phpName="Token" type="VARCHAR" size="32"/>
+        <column name="creationTime" phpName="Creationtime" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="memberID" phpName="Memberid" type="INTEGER" sqlType="int(11) unsigned"/>
+        <column name="status" phpName="Status" type="INTEGER" size="1" defaultValue="1"/>
+        <foreign-key foreignTable="members" name="forgetPassToken_ibfk_1" onDelete="SET NULL" onUpdate="CASCADE">
+            <reference local="memberID" foreign="id"/>
+        </foreign-key>
+        <index name="memberID">
+            <index-column name="memberID"/>
+        </index>
+        <vendor type="mysql">
+            <parameter name="Engine" value="InnoDB"/>
+        </vendor>
+    </table>
+    <table name="members" idMethod="native" phpName="Members" namespace="Backend">
+        <column name="id" phpName="Id" type="INTEGER" sqlType="int(11) unsigned" primaryKey="true" autoIncrement="true"
+                required="true"/>
+        <column name="email" phpName="Email" type="VARCHAR" size="128"/>
+        <column name="password" phpName="Password" type="VARCHAR" size="128"/>
+        <column name="creationDate" phpName="Creationdate" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP"/>
+        <column name="name" phpName="Name" type="VARCHAR" size="128"/>
+        <column name="contact" phpName="Contact" type="VARCHAR" size="64"/>
+        <column name="picURL" phpName="Picurl" type="VARCHAR" size="128"/>
+        <column name="birthday" phpName="Birthday" type="DATE"/>
+        <column name="status" phpName="Status" type="INTEGER" size="1" defaultValue="1"/>
+        <vendor type="mysql">
+            <parameter name="Engine" value="InnoDB"/>
+        </vendor>
+    </table>
+</database>
