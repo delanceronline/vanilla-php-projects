@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <printer_name>EPSON LQ-590 ESC/P2</printer_name>
+  <font_name>新細明體</font_name>
+  <font_size>12</font_size>
+  <page_size>
+    <width>850</width>
+    <height>800</height>
+  </page_size>
+  <margin>
+    <left>25</left>
+    <right>25</right>
+    <top>25</top>
+    <bottom>25</bottom>
+  </margin>
+  <offset_x>0</offset_x>
+  <offset_y>-2</offset_y>
+</config>
