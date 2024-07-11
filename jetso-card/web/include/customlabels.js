@@ -1,0 +1,3 @@
+
+var custom_label_map={"Chinese (Hong Kong S.A.R.)":{"ACCOUNT_EXISTS":"用戶名稱已存在","ACCOUNT_INACTIVE":"戶口無效","NO_RIGHTS":"權限不足","PROVIDE_PROMOTION_COUPON":"請提供優惠券或，優惠詳情及優惠標題","PROVIDE_PROMOTION_DETAIL":"請提供優惠詳情","PROVIDE_PROMOTION_TITLE":"請輸入優惠標題","COUPON_USED_COUNT":"已使用優惠券數目"},"English":{"ACCOUNT_EXISTS":"Account already exists.","ACCOUNT_INACTIVE":"Your account is inactive.","NO_RIGHTS":"Insufficient rights","PROVIDE_PROMOTION_COUPON":"Please upload a coupon image or, provide Offer Detail and Offer Title","PROVIDE_PROMOTION_DETAIL":"Please provide Offer Detail or an image for it","PROVIDE_PROMOTION_TITLE":"Please input Offer Title","COUPON_USED_COUNT":"Coupon Used Count"}};function GetCustomLabel(name)
+{return custom_label_map[current_language][name];}

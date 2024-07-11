@@ -1,0 +1,340 @@
+<html {$html_attrs}>
+<head>
+<title>{$caption campaigns}: {mlang_message ADV_SEARCH}</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+<style>
+#center_block{$id} {margin:0 auto;}
+#contents_block{$id} {text-align:center;width:100%}
+#header_block{$id} {white-space:nowrap;height:31px;padding-top:5px;}
+#main_block{$id} {padding:10px 0;width:100%}
+#inmain_block{$id} {margin:0 10px}
+#buttons_block{$id} {width:100%;padding:10px 0;}
+#buttons_block{$id} > * {margin:0 2px}
+#conditions_block{$id} {padding:5px;}
+</style>
+<!--[if IE]>
+<style>
+#main_block{$id} {padding:10px 10;}
+#inmain_block{$id} {margin:0 0px}
+</style>
+<![endif]-->
+</head>
+<body bgcolor=white {$bodyattrs}>
+{BEGIN body}
+{$header}
+{BEGIN contents_block}
+<table align=center id="center_block{$id}"><tr><td id="contents_block{$id}">
+	
+<b class="xtop"><b class="xb1b"></b><b class="xb2b"></b><b class="xb3b"></b><b class="xb4b"></b></b>
+<div id="header_block{$id}" class="upeditmenu">{$caption campaigns} - {mlang_message ADVANCED_SEARCH}</div>
+
+<div class="main_table_border2">
+<div class="main_table_border">
+
+{BEGIN conditions_block}
+<DIV id="conditions_block{$id}" class="loginshade">
+<span class=fieldname>{mlang_message SEARCH_FOR}:</span>
+<input type="radio" name="srchType" {$all_checkbox}>{BEGIN all_checkbox_label}{mlang_message ALL_CONDITIONS}{END all_checkbox_label}
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="srchType" {$any_checkbox}>{BEGIN any_checkbox_label}{mlang_message ANY_CONDITION}{END any_checkbox_label}
+</div>
+{END conditions_block}
+<table cellpadding=4 cellspacing=0 border=0 id="fields_block{$id}">
+<tr valign=center>
+<td align=center valign=middle class="headerlist">&nbsp;</td>
+<td width=30 align=center valign=middle class=headerlist>NOT</td>
+<td align=center valign=middle class="headerlist">&nbsp; </td>
+<td align=center valign=middle class="headerlist">&nbsp; </td>
+<td align=center valign=middle class="headerlist" style="border-right:0px;">&nbsp;</td></tr>
+
+{BEGIN id_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN id_label}{$label campaigns id}{END id_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$id_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_id}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$id_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$id_editcontrol1}&nbsp;</td>
+</tr>
+{END id_fieldblock}
+{BEGIN owner_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN owner_label}{$label campaigns owner}{END owner_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$owner_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_owner}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$owner_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$owner_editcontrol1}&nbsp;</td>
+</tr>
+{END owner_fieldblock}
+{BEGIN pt_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN pt_label}{$label campaigns pt}{END pt_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$pt_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_pt}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$pt_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$pt_editcontrol1}&nbsp;</td>
+</tr>
+{END pt_fieldblock}
+{BEGIN pd_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN pd_label}{$label campaigns pd}{END pd_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$pd_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_pd}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$pd_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$pd_editcontrol1}&nbsp;</td>
+</tr>
+{END pd_fieldblock}
+{BEGIN pi_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN pi_label}{$label campaigns pi}{END pi_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$pi_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_pi}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$pi_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$pi_editcontrol1}&nbsp;</td>
+</tr>
+{END pi_fieldblock}
+{BEGIN coupon_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN coupon_label}{$label campaigns coupon}{END coupon_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$coupon_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_coupon}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$coupon_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$coupon_editcontrol1}&nbsp;</td>
+</tr>
+{END coupon_fieldblock}
+{BEGIN terms_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN terms_label}{$label campaigns terms}{END terms_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$terms_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_terms}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$terms_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$terms_editcontrol1}&nbsp;</td>
+</tr>
+{END terms_fieldblock}
+{BEGIN ti_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN ti_label}{$label campaigns ti}{END ti_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$ti_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_ti}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$ti_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$ti_editcontrol1}&nbsp;</td>
+</tr>
+{END ti_fieldblock}
+{BEGIN cc_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN cc_label}{$label campaigns cc}{END cc_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$cc_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_cc}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$cc_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$cc_editcontrol1}&nbsp;</td>
+</tr>
+{END cc_fieldblock}
+{BEGIN cn_prefix_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN cn_prefix_label}{$label campaigns cn_prefix}{END cn_prefix_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$cn_prefix_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_cn_prefix}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$cn_prefix_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$cn_prefix_editcontrol1}&nbsp;</td>
+</tr>
+{END cn_prefix_fieldblock}
+{BEGIN cn_offset_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN cn_offset_label}{$label campaigns cn_offset}{END cn_offset_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$cn_offset_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_cn_offset}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$cn_offset_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$cn_offset_editcontrol1}&nbsp;</td>
+</tr>
+{END cn_offset_fieldblock}
+{BEGIN cr_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN cr_label}{$label campaigns cr}{END cr_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$cr_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_cr}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$cr_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$cr_editcontrol1}&nbsp;</td>
+</tr>
+{END cr_fieldblock}
+{BEGIN start_date_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN start_date_label}{$label campaigns start_date}{END start_date_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$start_date_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_start_date}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$start_date_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$start_date_editcontrol1}&nbsp;</td>
+</tr>
+{END start_date_fieldblock}
+{BEGIN start_time_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN start_time_label}{$label campaigns start_time}{END start_time_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$start_time_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_start_time}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$start_time_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$start_time_editcontrol1}&nbsp;</td>
+</tr>
+{END start_time_fieldblock}
+{BEGIN end_date_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN end_date_label}{$label campaigns end_date}{END end_date_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$end_date_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_end_date}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$end_date_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$end_date_editcontrol1}&nbsp;</td>
+</tr>
+{END end_date_fieldblock}
+{BEGIN end_time_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN end_time_label}{$label campaigns end_time}{END end_time_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$end_time_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_end_time}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$end_time_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$end_time_editcontrol1}&nbsp;</td>
+</tr>
+{END end_time_fieldblock}
+{BEGIN creation_date_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN creation_date_label}{$label campaigns creation_date}{END creation_date_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$creation_date_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_creation_date}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$creation_date_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$creation_date_editcontrol1}&nbsp;</td>
+</tr>
+{END creation_date_fieldblock}
+{BEGIN modified_date_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN modified_date_label}{$label campaigns modified_date}{END modified_date_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$modified_date_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_modified_date}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$modified_date_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$modified_date_editcontrol1}&nbsp;</td>
+</tr>
+{END modified_date_fieldblock}
+{BEGIN status_fieldblock}	
+<tr>
+	<td style="padding-left:15px;" class="editshade_b"><b>{BEGIN status_label}{$label campaigns status}{END status_label}</b>
+	<td align=center style="padding-left:10px;" class="editshade_lb"><input type=checkbox {$status_notbox}></td>
+	
+	<td style="padding-left:10px;" class="editshade_lb">
+	{$searchtype_status}
+	</td>
+	
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$status_editcontrol}&nbsp;</td>
+
+	<td width=270 style="padding-left:10px;" class="editshade_lb">{$status_editcontrol1}&nbsp;</td>
+</tr>
+{END status_fieldblock}
+</table>
+
+<div class="downedit" id="buttons_block{$id}">
+{BEGIN search_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message SEARCH}" {$searchbutton_attrs}></span>
+{END search_button} 
+{BEGIN reset_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message RESET}" {$resetbutton_attrs}></span>
+{END reset_button}
+{BEGIN back_button}
+ <span class=buttonborder><input class=button type=button value="{mlang_message BACK_TO_LIST}" {$backbutton_attrs}></span>
+{END back_button}
+</div>
+</div>
+</div>
+<b class="xbottom"><b class="xb4b"></b><b class="xb3b"></b><b class="xb2b"></b><b class="xb1b"></b></b>
+</td></tr></table>
+{END contents_block}
+{$footer}
+{END body}
+</body>
+</html>

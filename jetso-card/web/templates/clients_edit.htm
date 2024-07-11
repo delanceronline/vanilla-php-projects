@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML {$html_attrs}><HEAD><TITLE>{$caption clients}</TITLE>
+<link REL="stylesheet" href="include/style.css" type="text/css"><!--[if IE]><link REL="stylesheet" href="include/styleIE.css" type="text/css"><![endif]-->{BEGIN style_block}<STYLE>
+#center_block{$id} {width:500px;margin:0 auto;}
+#contents_block{$id} {text-align:center;}
+#header_block{$id} {white-space:nowrap;height:31px;padding:5px;text-align:center;}
+#footer_block{$id} {height:15px;}
+#fields_block{$id} {width:100%;}
+#fields_block{$id} td.es{padding:4px 10px;}
+#fields_block{$id} tr {padding:3px;}
+#buttons_block{$id} {padding-bottom:5px;white-space:nowrap;text-align:center;}
+#required_block{$id} {text-align:left;padding:5px}
+#message_block{$id}{margin-bottom:10px;}
+#span{$id} {margin:0 20px 0 20px;}
+</STYLE>
+<!--[if IE]>
+<STYLE>
+#fields_block{$id} {width:95%;}
+</STYLE>
+<![endif]-->{END style_block}
+<META name=GENERATOR content="MSHTML 8.00.6001.19088"></HEAD>
+<BODY {$bodyattrs}>{BEGIN body}{$header} 
+{BEGIN flybody}<TABLE id="center_block{$id}" cellSpacing=0 cellPadding=0 align=center {$centerblock_attrs}><TR><TD><B class=xtop><B class=xb1b></B><B class=xb2b></B><B class=xb3b></B><B 
+      class=xb4b></B></B>
+      <DIV style="WIDTH: 799px; HEIGHT: 31px" id="header_block{$id}" class=upeditmenu>{$caption clients}, {mlang_message EDIT_RECORD}</DIV>
+      <DIV 
+      style="BORDER-BOTTOM: #516c81 1px solid; BORDER-LEFT: #516c81 1px solid; BORDER-TOP: #516c81 1px solid; BORDER-RIGHT: #516c81 1px solid" 
+      class=main_table_border2><DIV class=main_table_border><TABLE id="fields_block{$id}" border=0 cellSpacing=0 cellPadding=0 width=480 align=center>{BEGIN message_block}<DIV id="message_block{$id}" class=downedit align=center>{$message}</DIV>{END message_block}
+        {BEGIN email_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN email_label}{$label clients email}{END email_label}</TD>
+          <TD class="es editshade_lb" width=250>{$email_editcontrol}&nbsp; </TD></TR>{END email_fieldblock}
+        {BEGIN logo_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN logo_label}{$label clients logo}{END logo_label}</TD>
+          <TD class="es editshade_lb" width=250>{$logo_editcontrol}&nbsp; </TD></TR>{END logo_fieldblock}
+        {BEGIN sn_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN sn_label}{$label clients sn}{END sn_label}</TD>
+          <TD class="es editshade_lb" width=250>{$sn_editcontrol}&nbsp; </TD></TR>{END sn_fieldblock}
+        {BEGIN cp_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN cp_label}{$label clients cp}{END cp_label}</TD>
+          <TD class="es editshade_lb" width=250>{$cp_editcontrol}&nbsp; </TD></TR>{END cp_fieldblock}
+        {BEGIN tn_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN tn_label}{$label clients tn}{END tn_label}</TD>
+          <TD class="es editshade_lb" width=250>{$tn_editcontrol}&nbsp; </TD></TR>{END tn_fieldblock}
+        {BEGIN website_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN website_label}{$label clients website}{END website_label}</TD>
+          <TD class="es editshade_lb" width=250>{$website_editcontrol}&nbsp; </TD></TR>{END website_fieldblock}
+        {BEGIN fb_page_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN fb_page_label}{$label clients fb_page}{END fb_page_label}</TD>
+          <TD class="es editshade_lb" width=250>{$fb_page_editcontrol}&nbsp; </TD></TR>{END fb_page_fieldblock}
+        {BEGIN fb_page_id_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN fb_page_id_label}{$label clients fb_page_id}{END fb_page_id_label}</TD>
+          <TD class="es editshade_lb" width=250>{$fb_page_id_editcontrol}&nbsp; </TD></TR>{END fb_page_id_fieldblock}
+        {BEGIN industry_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN industry_label}{$label clients industry}{END industry_label}</TD>
+          <TD class="es editshade_lb" width=250>{$industry_editcontrol}&nbsp; </TD></TR>{END industry_fieldblock}
+        {BEGIN status_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN status_label}{$label clients status}{END status_label}</TD>
+          <TD class="es editshade_lb" width=250>{$status_editcontrol}&nbsp; </TD></TR>{END status_fieldblock}
+        {BEGIN group_fieldblock}<TR><TD class="es editshade_b" width=150>{BEGIN group_label}{$label clients group}{END group_label}</TD>
+          <TD class="es editshade_lb" width=250>{$group_editcontrol}&nbsp; 
+      </TD></TR>{END group_fieldblock}</TABLE></DIV>
+      <DIV id="buttons_block{$id}" class=downedit2>{BEGIN legend}<DIV id="required_block{$id}"><IMG alt=bullet 
+      src="images/icon_required.gif"> - {mlang_message REQUIRED_FIELD}</DIV>{END legend}{$legendBreak} {BEGIN save_button}<SPAN class=buttonborder><INPUT class=button value="{mlang_message SAVE}" type=submit name=submit1 {$savebutton_attrs}></SPAN>{END save_button} 
+      {BEGIN reset_button}<SPAN class=buttonborder><INPUT class=button value="{mlang_message RESET}" type=reset {$resetbutton_attrs}></SPAN>{END reset_button} 
+      <SPAN id="span{$id}">&nbsp;</SPAN> {BEGIN prev_button}<SPAN class=buttonborder><INPUT class=button value=" <<< " type=reset {$prevbutton_attrs}></SPAN>{END prev_button} 
+      {BEGIN back_button}<SPAN class=buttonborder><INPUT class=button value="{mlang_message BACK_TO_LIST}" type=button {$backbutton_attrs}></SPAN>{END back_button} 
+      {BEGIN next_button}<SPAN class=buttonborder><INPUT class=button value=" >>> " type=reset {$nextbutton_attrs}></SPAN>{END next_button} 
+      </DIV></DIV><B class=xbottom><B class=xb4b></B><B class=xb3b></B><B 
+      class=xb2b></B><B class=xb1b></B></B></TD></TR></TABLE>{END flybody}{BEGIN detail_tables}{END detail_tables}<BR><BR>{END body}{$footer} </BODY></HTML>
