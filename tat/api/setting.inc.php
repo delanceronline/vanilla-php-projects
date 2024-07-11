@@ -10,13 +10,13 @@ $globalAWSS3FilesizeLimit = 8388608; // 8MB
 
 $globalSMTPHost = 'smtp.sendgrid.net';
 $globalSMTPUser = 'azure_3a28caf0bbdea5247ff4356ac5117e86@azure.com';
-$globalSMTPPassword = '3o7K3KmARupyR20';
+$globalSMTPPassword = '';
 $globalSMTPPort = 25;
 $globalWebMasterEmail = 'info@easyapp.hk';
 $globalEmailFromName = 'TAT app';
 
-$globalAWSAccessKey = 'AKIAIJHQEJK3QQU5MENA';
-$globalAWSSecretKey = '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';
+$globalAWSAccessKey = '';
+$globalAWSSecretKey = '';
 $globalAWSS3Bucket = 'tat-addon';
 
 $globalUploadedImageBaseURL = 'https://d3vibt3h1fiags.cloudfront.net/uploaded/';
