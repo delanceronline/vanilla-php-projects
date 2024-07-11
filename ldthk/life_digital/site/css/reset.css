@@ -1,0 +1,14 @@
+ol,ul {list-style:none; }
+.left {float:left;}
+.right {float:right;}
+.clear {clear:both;}
+.hide {display:none;}
+.center {text-align:center;}
+.no-border{border:none !important;}
+.no-margin{margin-left:0; margin-right:0;}
+.break { word-break: break-all; word-break: break-word;}
+.clearfix {display: inline-block;}
+.clearfix:after {content: " "; display: block; height: 0; clear: both; font-size: 0; visibility: hidden;}
+.clearfix {display: block;}
+
+
